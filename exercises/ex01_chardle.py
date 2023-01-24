@@ -30,5 +30,4 @@ if chardle_guess[len(chardle_guess) - 5] == character_search:
     print(character_search + " found at index 0")
     frequency + 1
 
-
 print (frequency)
