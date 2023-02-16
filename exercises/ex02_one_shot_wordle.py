@@ -1,134 +1,140 @@
 """EX02 - One-Shot Wordle - Loops!"""
 __author__ = "730488361"
 
-SECRET: str = "python"
-guess: str = str(input("What is your 6-letter guess?"))
+secret: str = "python"
+guess: str = str(input(f"What is your 6-letter guess?"))
 playing: bool = True
 
+word_idx = int = 0
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-word_idx: int = 0
-emoji_1: str = GREEN_BOX or WHITE_BOX
-emoji_2: str = GREEN_BOX or WHITE_BOX
-emoji_3: str = GREEN_BOX or WHITE_BOX
-emoji_4: str = GREEN_BOX or WHITE_BOX
-emoji_5: str = GREEN_BOX or WHITE_BOX
-emoji_6: str = GREEN_BOX or WHITE_BOX
+e_1: str = GREEN_BOX or WHITE_BOX or YELLOW_BOX
+e_2: str = GREEN_BOX or WHITE_BOX or YELLOW_BOX
+e_3: str = GREEN_BOX or WHITE_BOX or YELLOW_BOX
+e_4: str = GREEN_BOX or WHITE_BOX or YELLOW_BOX
+e_5: str = GREEN_BOX or WHITE_BOX or YELLOW_BOX
+e_6: str = GREEN_BOX or WHITE_BOX or YELLOW_BOX
+
+more_opt: str = secret[len(secret) - 6] or secret[len(secret) - 5] or secret[len(secret) - 4] or secret[len(secret) - 3] or secret[len(secret) - 2] or secret[len(secret) - 1] 
 
 while playing: 
-    if len(guess) != 6:
-        print("That was not 6 letters! Try again: ")
-        guess = str = str(input("What is your 6-letter guess? "))
+    if len(guess) != len(secret):
+        try_again: str = str(input(f"That was not 6 letters! Try again: ")) 
+        guess = try_again
     else:
-        if len(guess) == 6:
-            if guess == SECRET:
-                if word_idx <= len(SECRET):
+        if len(guess) == len(secret):
+            if guess == secret:
+                if word_idx < len(secret):
                     if word_idx == 0:
-                        if guess[len(guess)-6] == SECRET[len(SECRET)-6]:
-                            emoji_1: str = GREEN_BOX
+                        if guess[len(guess) - 6] == secret[len(secret) - 6]:
+                            e_1: str = GREEN_BOX
                         else:
-                            if guess[len(guess)-6] != SECRET[len(SECRET)-6]:
-                                emoji_1: str = WHITE_BOX
+                            if guess[len(guess) - 6] != secret[len(secret) - 6]:
+                                e_1: str = WHITE_BOX
                         word_idx = word_idx + 1
                     if word_idx == 1:
-                        if guess[len(guess)-5] == SECRET[len(SECRET)-5]:
-                            emoji_2: str = GREEN_BOX
+                        if guess[len(guess) - 5] == secret[len(secret) - 5]:
+                            e_2: str = GREEN_BOX
                         else:
-                            if guess[len(guess)-5] != SECRET[len(SECRET)-5]:
-                                emoji_2: str = WHITE_BOX
+                            if guess[len(guess) - 5] != secret[len(secret) - 5]:
+                                e_2: str = WHITE_BOX
                         word_idx = word_idx + 1
                     if word_idx == 2:
-                        if guess[len(guess)-4] == SECRET[len(SECRET)-4]:
-                            emoji_3: str = GREEN_BOX
+                        if guess[len(guess) - 4] == secret[len(secret) - 4]:
+                            e_3: str = GREEN_BOX
                         else:
-                            if guess[len(guess)-4] != SECRET[len(SECRET)-4]:
-                                emoji_3: str = WHITE_BOX
+                            if guess[len(guess) - 4] != secret[len(secret) - 4]:
+                                e_3: str = WHITE_BOX
                         word_idx = word_idx + 1
                     if word_idx == 3:
-                        if guess[len(guess)-3] == SECRET[len(SECRET)-3]:
-                            emoji_4: str = GREEN_BOX
+                        if guess[len(guess) - 3] == secret[len(secret) - 3]:
+                            e_4: str = GREEN_BOX
                         else:
-                            if guess[len(guess)-3] != SECRET[len(SECRET)-3]:
-                                emoji_4: str = WHITE_BOX
+                            if guess[len(guess) - 3] != secret[len(secret) - 3]:
+                                e_4: str = WHITE_BOX
                         word_idx = word_idx + 1
                     if word_idx == 4:
-                        if guess[len(guess)-2] == SECRET[len(SECRET)-2]:
-                            emoji_5: str = GREEN_BOX
+                        if guess[len(guess) - 2] == secret[len(secret) - 2]:
+                            e_5: str = GREEN_BOX
                         else:
-                            if guess[len(guess)-2] != SECRET[len(SECRET)-2]:
-                                emoji_5: str = WHITE_BOX
+                            if guess[len(guess) - 2] != secret[len(secret) - 2]:
+                                e_5: str = WHITE_BOX
                         word_idx = word_idx + 1
                     if word_idx == 5:
-                        if guess[len(guess)-1] == SECRET[len(SECRET)-1]:
-                            emoji_6: str = GREEN_BOX
+                        if guess[len(guess) - 1] == secret[len(secret) - 1]:
+                            e_6: str = GREEN_BOX
                         else:
-                            if guess[len(guess)-1] != SECRET[len(SECRET)-1]:
-                                emoji_6: str = WHITE_BOX
+                            if guess[len(guess) - 1] != secret[len(secret) - 1]:
+                                e_6: str = WHITE_BOX
                         word_idx = word_idx + 1
-                    print(emoji_1 + emoji_2 + emoji_3 + emoji_4 + emoji_5 + emoji_6)
-                    print("Woo! You got it!")
+                    print(e_1 + e_2 + e_3 + e_4 + e_5 + e_6)
+                    print(f"Woo! You got it!")
                     playing = False
             else:
-                if guess != SECRET:
-                    if word_idx <= len(SECRET):
+                if guess != secret:
+                    if word_idx < len(secret):
                         if word_idx == 0:
-                            if guess[len(guess)-6] == SECRET[len(SECRET)-6]:
-                                emoji_1: str = GREEN_BOX
+                            if guess[len(guess) - 6] == secret[len(secret) - 6]:
+                                e_1 = GREEN_BOX
                             else:
-                                if guess[len(guess)-6] == SECRET[len(SECRET)-6] or SECRET[len(SECRET)-5] or SECRET[len(SECRET)-3] or SECRET[len(SECRET)-2] or SECRET[len(SECRET)-1]:
-                                    emoji_1: str = YELLOW_BOX
-                                else:
-                                    emoji_1: str = WHITE_BOX
+                                if guess[len(guess) - 6] >= more_opt:
+                                    e_1 = YELLOW_BOX
+                                else: 
+                                    if guess[len(guess) - 6] != more_opt:
+                                        e_1 = WHITE_BOX
                             word_idx = word_idx + 1
                         if word_idx == 1:
-                            if guess[len(guess)-5] == SECRET[len(SECRET)-5]:
-                                emoji_2: str = GREEN_BOX
+                            if guess[len(guess) - 5] == secret[len(secret) - 5]:
+                                e_2 = GREEN_BOX
                             else:
-                                if guess[len(guess)-5] == SECRET[len(SECRET)-6] or SECRET[len(SECRET)-5] or SECRET[len(SECRET)-3] or SECRET[len(SECRET)-2] or SECRET[len(SECRET)-1]:
-                                    emoji_2: str = YELLOW_BOX
-                                else:
-                                    emoji_2: str = WHITE_BOX
+                                if guess[len(guess) - 5] >= more_opt:
+                                    e_2 = YELLOW_BOX
+                                else: 
+                                    if guess[len(guess) - 5] != more_opt:
+                                        e_2 = WHITE_BOX
                             word_idx = word_idx + 1
                         if word_idx == 2:
-                            if guess[len(guess)-4] == SECRET[len(SECRET)-4]:
-                                emoji_3: str = GREEN_BOX
+                            if guess[word_idx] == secret[word_idx]:
+                                e_3 = GREEN_BOX
                             else:
-                                if guess[len(guess)-4] == SECRET[len(SECRET)-6] or SECRET[len(SECRET)-5] or SECRET[len(SECRET)-3] or SECRET[len(SECRET)-2] or SECRET[len(SECRET)-1]:
-                                    emoji_3: str = YELLOW_BOX
-                                else:
-                                    emoji_3: str = WHITE_BOX
+                                if guess[len(guess) - 4] >= more_opt:
+                                    e_3 = YELLOW_BOX
+                                else: 
+                                    if guess[len(guess) - 4] != more_opt:
+                                        e_3 = WHITE_BOX
                             word_idx = word_idx + 1
                         if word_idx == 3:
-                            if guess[len(guess)-3] == SECRET[len(SECRET)-3]:
-                                emoji_4: str = GREEN_BOX
+                            if guess[len(guess) - 3] == secret[len(secret) - 3]:
+                                e_4 = GREEN_BOX
                             else:
-                                if guess[len(guess)-3] == SECRET[len(SECRET)-6] or SECRET[len(SECRET)-5] or SECRET[len(SECRET)-3] or SECRET[len(SECRET)-2] or SECRET[len(SECRET)-1]:
-                                    emoji_4: str = YELLOW_BOX
-                                else:
-                                    emoji_4: str = WHITE_BOX
+                                if guess[len(guess) - 3] >= more_opt:
+                                    e_4 = YELLOW_BOX
+                                else: 
+                                    if guess[len(guess) - 3] != more_opt:
+                                        e_4 = WHITE_BOX
                             word_idx = word_idx + 1
                         if word_idx == 4:
-                            if guess[len(guess)-2] == SECRET[len(SECRET)-2]:
-                                emoji_5: str = GREEN_BOX
+                            if guess[len(guess) - 2] == secret[len(secret) - 2]:
+                                e_5 = GREEN_BOX
                             else:
-                                if guess[len(guess)-2] == SECRET[len(SECRET)-6] or SECRET[len(SECRET)-5] or SECRET[len(SECRET)-3] or SECRET[len(SECRET)-2] or SECRET[len(SECRET)-1]:
-                                    emoji_5: str = YELLOW_BOX
-                                else:
-                                    emoji_5: str = WHITE_BOX
+                                if guess[len(guess) - 2] >= more_opt:
+                                    e_5 = YELLOW_BOX
+                                else: 
+                                    if guess[len(guess) - 2] != more_opt:
+                                        e_5 = WHITE_BOX
                             word_idx = word_idx + 1
                         if word_idx == 5:
-                            if guess[len(guess)-1] == SECRET[len(SECRET)-1]:
-                                emoji_6: str = GREEN_BOX
+                            if guess[len(guess) - 1] == secret[len(secret) - 1]:
+                                e_6 = GREEN_BOX
                             else:
-                                if guess[len(guess)-1] == SECRET[len(SECRET)-6] or SECRET[len(SECRET)-5] or SECRET[len(SECRET)-3] or SECRET[len(SECRET)-2] or SECRET[len(SECRET)-1]:
-                                    emoji_6: str = YELLOW_BOX
-                                else:
-                                    emoji_6: str = WHITE_BOX
+                                if guess[len(guess) - 1] >= more_opt:
+                                    e_6 = YELLOW_BOX
+                                else: 
+                                    if guess[len(guess) - 1] != more_opt:
+                                        e_6 = WHITE_BOX
                             word_idx = word_idx + 1
-                        print(emoji_1 + emoji_2 + emoji_3 + emoji_4 + emoji_5 + emoji_6)
+                        print(e_1 + e_2 + e_3 + e_4 + e_5 + e_6)
                         print("Not quite. Play again soon!")
                         playing = False  
-
-        
