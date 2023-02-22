@@ -34,7 +34,7 @@ def input_guess(expected_length: int) -> str:
     """Prompt user for valid guess"""
     guess: str = str(input(f"Enter a {expected_length} character word: "))
     while len(guess) != expected_length:
-        try_again: str = str(input(f"That was not {expected_length} chars! Try again: ")) 
+        try_again: str = str(input(f"That wasn't {expected_length} chars! Try again: ")) 
         guess = try_again
     return guess
 
@@ -44,14 +44,18 @@ def main() -> None:
     turns_taken: int = 1
     while turns_taken <= 6:
         print(f"=== Turn {turns_taken}/6 ===")
-        guess: input_guess(len(secret))
+        guess =  input_guess(len(secret))
         if guess == secret:
             print(emojified(guess, secret))
             print(f"You won in {turns_taken}/6 turns!")
+            exit()
         if guess != secret:
             print(emojified(guess, secret))
             turns_taken += 1
         if turns_taken > 6:
             print(emojified(guess, secret))
             print(f"X/6 - Sorry, try again tomorrow!")
+            exit()
 
+if __name__ == "__main__":
+    main()
