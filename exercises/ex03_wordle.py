@@ -46,16 +46,14 @@ def main() -> None:
         print(f"=== Turn {turns_taken}/6 ===")
         guess =  input_guess(len(secret))
         if guess == secret:
-            print(emojified(guess, secret))
-            print(f"You won in {turns_taken}/6 turns!")
-            exit()
+            print (emojified(guess, secret))
+            return (f"You won in {turns_taken}/6 turns!")
         if guess != secret:
-            print(emojified(guess, secret))
+            print (emojified(guess, secret))
             turns_taken += 1
         if turns_taken > 6:
-            print(emojified(guess, secret))
-            print(f"X/6 - Sorry, try again tomorrow!")
-            exit()
+            print (emojified(guess, secret))
+            return(f"X/6 - Sorry, try again tomorrow!")
 
 if __name__ == "__main__":
     main()
