@@ -42,18 +42,20 @@ def main() -> None:
     """The entrypoint of the program and main game loop."""
     secret: str = "codes"
     turns_taken: int = 1
-    while turns_taken <= 6:
+    wins: int = 0
+    while turns_taken <= 6 and wins < 1:
         print(f"=== Turn {turns_taken}/6 ===")
         guess =  input_guess(len(secret))
         if guess == secret:
-            print (emojified(guess, secret))
-            return (f"You won in {turns_taken}/6 turns!")
+            print(emojified(guess, secret))
+            print (f"You won in {turns_taken}/6 turns!")
+            wins += 1
         if guess != secret:
-            print (emojified(guess, secret))
+            print(emojified(guess, secret))
             turns_taken += 1
         if turns_taken > 6:
-            print (emojified(guess, secret))
-            return(f"X/6 - Sorry, try again tomorrow!")
+            print(emojified(guess, secret))
+            print("X/6 - Sorry, try again tomorrow!")
 
 if __name__ == "__main__":
     main()
