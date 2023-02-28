@@ -1,4 +1,4 @@
-"""EX04 - 'list' Utility Functions"""
+"""EX04 - 'list' Utility Functions."""
 ___author___ = "730488361"
 
 def all(a: list[int], b: int) -> bool:
@@ -13,12 +13,10 @@ def all(a: list[int], b: int) -> bool:
 def max(input: list[int]) -> int:
     """Return largest int in list."""
     i: int = 0
-    largest: int
+    largest = input[i]
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     while i < len(input):
-        largest = input[i]
-        i += 1
         if largest < input[i]:
             largest = input[i]
             i += 1
@@ -30,7 +28,7 @@ def max(input: list[int]) -> int:
 def is_equal(x: list[int], y: list[int]) -> bool:
     """Test if lists are equal to each other."""
     i: int = 0
-    while i < len(x) and i<len(y):
+    while i < len(x) and i < len(y):
         if x[i] != y[i] or len(x) != len(y):
             return False
         i += 1
