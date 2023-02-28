@@ -19,9 +19,7 @@ def max(input: list[int]) -> int:
     while i < len(input):
         if largest < input[i]:
             largest = input[i]
-            i += 1
-        elif largest > input[i]:
-            i += 1
+        i += 1
     return largest
        
         
