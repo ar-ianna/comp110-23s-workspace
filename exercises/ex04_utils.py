@@ -1,6 +1,7 @@
 """EX04 - 'list' Utility Functions."""
 ___author___ = "730488361"
 
+
 def all(a: list[int], b: int) -> bool:
     """Test if given int is the same as all in list."""
     i: int = 0
@@ -9,6 +10,7 @@ def all(a: list[int], b: int) -> bool:
             return False
         i += 1
     return True
+
 
 def max(input: list[int]) -> int:
     """Return largest int in list."""
