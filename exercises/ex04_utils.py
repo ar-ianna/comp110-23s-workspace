@@ -13,7 +13,7 @@ def all(a: list[int], b: int) -> bool:
 def max(input: list[int]) -> int:
     """Return largest int in list."""
     i: int = 0
-    largest: int = 0
+    largest: int = input[0]
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     while i < len(input):
