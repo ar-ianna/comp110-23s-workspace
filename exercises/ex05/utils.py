@@ -1,9 +1,9 @@
-"""EX05 - 'list' Utility Functions"""
+"""EX05 - 'list' Utility Functions."""
 ___author___ = "730488361"
 
 
 def only_evens(a: list[int]) -> list[int]:
-    """Given a list, return only evens"""
+    """Given a list, return only evens."""
     evens: list[int] = list()
     i: int = 0
     while i < len(a):
@@ -14,7 +14,7 @@ def only_evens(a: list[int]) -> list[int]:
 
 
 def concat(x: list[int], y: list[int]) -> list[int]:
-    """Given 2 lists, all of the elements should appear in order in one list"""
+    """Given 2 lists, all of the elements should appear in order in one list."""
     all: list[int] = list()
     xi: int = 0
     yi: int = 0
@@ -28,7 +28,7 @@ def concat(x: list[int], y: list[int]) -> list[int]:
 
 
 def sub(a_list: list[int], s: int, t: int) -> list[int]:
-    """Given a list & start/end indexes, a list of numbers between them will return"""
+    """Given a list & start/end indexes, a list of numbers between them will return."""
     within: list[int] = list()
     i_one: int = s
     i_two: int = t
