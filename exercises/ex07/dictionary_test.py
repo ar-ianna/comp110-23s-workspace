@@ -3,6 +3,7 @@ ___author___ = "730488361"
 
 from dictionary import invert, favorite_color, count
 
+
 def test_empty() -> None:
     """Return empty dictionary when given one."""
     assert invert({}) == {}
@@ -22,7 +23,7 @@ def test_regular_invert2() -> None:
 
 def test_empty_colors() -> None:
     """Return empty string if given empty dictionary."""
-    test_dict: dict[str,str] = {}
+    test_dict: dict[str, str] = {}
     assert favorite_color(test_dict) == ""
 
 
